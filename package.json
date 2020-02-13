@@ -1,0 +1,23 @@
+{
+  "name": "node-red-contrib-dlna",
+  "version": "0.1.0",
+  "description": "A Node-RED node to control DLNA media players.",
+  "main": "none",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "scripts": {
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexkn/node-red-contrib-dlna.git"
+  },
+  "author": "Alexander Knöbel <alex-git@knoebel.info>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexkn/node-red-contrib-dlna/issues"
+  },
+  "homepage": "https://github.com/alexkn/node-red-contrib-dlna#readme"
+}
