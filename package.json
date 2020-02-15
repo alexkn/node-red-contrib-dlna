@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "A Node-RED node to control DLNA media players.",
   "main": "none",
-  "dependencies": {},
+  "dependencies": {
+    "upnp-mediarenderer-client": "^1.2.4"
+  },
   "devDependencies": {
     "eslint": "^6.8.0"
   },
@@ -19,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/alexkn/node-red-contrib-dlna/issues"
   },
-  "homepage": "https://github.com/alexkn/node-red-contrib-dlna#readme"
+  "homepage": "https://github.com/alexkn/node-red-contrib-dlna#readme",
+  "node-red": {
+    "nodes": {
+      "dlna-action": "nodes/dlna-action.js"
+    }
+  }
 }
