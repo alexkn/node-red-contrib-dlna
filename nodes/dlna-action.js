@@ -4,8 +4,10 @@ module.exports = function(RED) {
     function DlnaAction(config) {
         RED.nodes.createNode(this,config);
 
+        this.deviceUrl = config.deviceUrl;
+
         this.on("input", (msg, send, done) => {
-            let client = new MediaRendererClient(msg.deviceUrl);
+            let client = new MediaRendererClient(msg.deviceUrl || this.deviceUrl);
 
             let callback = (err, result) => {
                 if(err) {
