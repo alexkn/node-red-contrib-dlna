@@ -1,5 +1,6 @@
 const MediaRendererClient = require("upnp-mediarenderer-client");
 const Ssdp = require("../lib/Ssdp");
+const fetch = require("node-fetch").default;
 
 /**
  *
@@ -31,7 +32,7 @@ module.exports = function(RED) {
 
         this.device = config.device;
 
-        this.on("input", (msg, send, done) => {
+        this.on("input", async (msg, send, done) => {
             let device = msg.device || this.device;
             if(!device) {
                 done("No device specified");
@@ -64,8 +65,22 @@ module.exports = function(RED) {
                 case "stop":
                     client.stop(callback);
                     break;
-                case "load":
-                    client.load(msg.payload.url, msg.payload.options, callback);
+                case "load": {
+                    if(!msg.payload.url) {
+                        done("Input has to contain payload.url");
+                    }
+                    let options = msg.payload.options || {};
+                    if(options.autoplay === undefined) {
+                        options.autoplay = true;
+                    }
+                    if(options.contentType === undefined) {
+                        let response = await fetch(msg.payload.url, {
+                            method: "HEAD"
+                        });
+                        options.contentType = response.headers.get("Content-Type");
+                    }
+                    client.load(msg.payload.url, options, callback);
+                }
             }
         });
     }
