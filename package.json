@@ -25,6 +25,9 @@
     "url": "https://github.com/alexkn/node-red-contrib-dlna/issues"
   },
   "homepage": "https://github.com/alexkn/node-red-contrib-dlna#readme",
+  "keywords": [
+    "node-red"
+  ],
   "node-red": {
     "nodes": {
       "dlna-action": "nodes/dlna-action.js"
