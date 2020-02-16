@@ -47,4 +47,18 @@
 
 <script type="text/html" data-help-name="dlna-action">
     <p>A node that sends a command to a DLNA media renderer.</p>
+    <h3>Konfiguration</h3>
+    <ul>
+        <li><b>Device:</b> The DLNA Device. This can be the friendly name, Unique Service Name (USN) or description XML URL.</li>
+    </ul>
+    <h3>Input</h3>
+    <p>
+        <code>msg.device</code> The DLNA Device.<br>
+        <code>msg.payload.action</code> can be "play", "pause", "stop" or "load".<br>
+        For action "load" <code>msg.payload.url</code> must also be set.
+    </p>
+    <h3>Output</h3>
+    <p>
+        Action response.
+    </p>
 </script>
