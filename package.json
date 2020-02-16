@@ -32,5 +32,9 @@
     "nodes": {
       "dlna-action": "nodes/dlna-action.js"
     }
-  }
+  },
+  "files": [
+    "/lib",
+    "/nodes"
+  ]
 }
