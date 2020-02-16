@@ -4,13 +4,32 @@
         color: '#a6bbcf',
         defaults: {
             name: {value:""},
-            deviceUrl: {value:""}
+            device: {value:""}
         },
         inputs:1,
         outputs:1,
         icon: "file.png",
         label: function() {
             return this.name||"dlna-action";
+        },
+        oneditprepare() {
+            let devices = [];
+            $.getJSON("dlna/devices", (data, status, xhr) => {
+                for (var usn in data) {
+                    devices.push(data[usn].name)
+                }
+            });
+
+            let $device = $("#node-input-device");
+
+            $device.autocomplete({
+                source: devices,
+                minLength: 0
+            });
+
+            $device.on('focus', () => {
+                $device.autocomplete('search');
+            });
         }
     });
 </script>
@@ -21,8 +40,8 @@
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
     <div class="form-row">
-        <label for="node-input-deviceUrl"><i class="icon-tag"></i> Device URL</label>
-        <input type="text" id="node-input-deviceUrl" placeholder="URL">
+        <label for="node-input-device"><i class="icon-tag"></i> Device</label>
+        <input type="text" id="node-input-device" placeholder="Device">
     </div>
 </script>
 
