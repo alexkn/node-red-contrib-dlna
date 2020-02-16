@@ -32,7 +32,16 @@ module.exports = function(RED) {
         this.device = config.device;
 
         this.on("input", (msg, send, done) => {
-            let deviceUrl = findDeviceUrl(msg.device || this.device);
+            let device = msg.device || this.device;
+            if(!device) {
+                done("No device specified");
+                return;
+            }
+            let deviceUrl = findDeviceUrl(device);
+            if(!deviceUrl) {
+                done("No device url found.");
+                return;
+            }
             let client = new MediaRendererClient(deviceUrl);
 
             let callback = (err, result) => {
