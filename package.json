@@ -4,8 +4,8 @@
   "description": "Node-RED nodes to control DLNA media players.",
   "main": "none",
   "dependencies": {
-    "node-fetch": "^2.6.0",
-    "node-ssdp": "^4.0.0",
+    "node-fetch": "^2.6.1",
+    "node-ssdp": "^4.0.1",
     "upnp-mediarenderer-client": "^1.4.0",
     "xml2js": "^0.4.23"
   },
