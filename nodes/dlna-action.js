@@ -7,20 +7,20 @@ const fetch = require("node-fetch").default;
  * @param {string} device
  */
 const findDeviceUrl = (device) => {
-    if(device.startsWith("http://") || device.startsWith("https://")) {
+    if (device.startsWith("http://") || device.startsWith("https://")) {
         return device;
     }
     let devices = Ssdp.Devices();
 
     // find by usn
-    if(devices[device]) {
+    if (devices[device]) {
         return devices[device].deviceUrl;
     }
 
     // find by friendly name
     for (var usn in devices) {
         let d = devices[usn];
-        if(d.name === device) {
+        if (d.name === device) {
             return d.deviceUrl;
         }
     }
@@ -34,19 +34,19 @@ module.exports = function(RED) {
 
         this.on("input", async (msg, send, done) => {
             let device = msg.device || this.device;
-            if(!device) {
+            if (!device) {
                 done("No device specified");
                 return;
             }
             let deviceUrl = findDeviceUrl(device);
-            if(!deviceUrl) {
+            if (!deviceUrl) {
                 done("No device url found.");
                 return;
             }
             let client = new MediaRendererClient(deviceUrl);
 
             let callback = (err, result) => {
-                if(err) {
+                if (err) {
                     done(err);
                 } else {
                     msg.payload = result;
@@ -55,7 +55,7 @@ module.exports = function(RED) {
                 }
             };
 
-            switch(msg.payload.action) {
+            switch (msg.payload.action) {
                 case "play":
                     client.play(callback);
                     break;
@@ -66,14 +66,14 @@ module.exports = function(RED) {
                     client.stop(callback);
                     break;
                 case "load": {
-                    if(!msg.payload.url) {
+                    if (!msg.payload.url) {
                         done("Input has to contain payload.url");
                     }
                     let options = msg.payload.options || {};
-                    if(options.autoplay === undefined) {
+                    if (options.autoplay === undefined) {
                         options.autoplay = true;
                     }
-                    if(options.contentType === undefined) {
+                    if (options.contentType === undefined) {
                         let response = await fetch(msg.payload.url, {
                             method: "HEAD"
                         });
