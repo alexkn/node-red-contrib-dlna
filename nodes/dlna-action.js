@@ -30,10 +30,8 @@ module.exports = function(RED) {
     function DlnaAction(config) {
         RED.nodes.createNode(this,config);
 
-        this.device = config.device;
-
         this.on("input", async (msg, send, done) => {
-            let device = msg.device || this.device;
+            let device = msg.device || config.device;
             if (!device) {
                 done("No device specified");
                 return;
