@@ -1,10 +1,10 @@
 # node-red-contrib-dlna
 
-Node-RED nodes to control DLNA media players.
+Node-RED nodes to control DLNA / UPnP AV media players.
 
 ## dlna-action
 
-A node to send commands to a DLNA media renderer:
+A node to send commands to a DLNA / UPnP AV media renderer:
 
 - play
 - pause

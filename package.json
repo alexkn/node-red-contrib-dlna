@@ -1,7 +1,7 @@
 {
   "name": "node-red-contrib-dlna",
   "version": "0.1.0",
-  "description": "Node-RED nodes to control DLNA media players.",
+  "description": "Node-RED nodes to control DLNA / UPnP AV media players.",
   "main": "none",
   "dependencies": {
     "node-fetch": "^2.6.1",
