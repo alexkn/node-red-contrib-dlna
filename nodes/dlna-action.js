@@ -42,6 +42,15 @@ module.exports = function(RED) {
                         msg.payload = await client.load(msg.payload.url, options);
                         break;
                     }
+                    case "getvolume":
+                        msg.payload = await client.getVolume();
+                        break;
+                    case "setvolume":
+                        if (!msg.payload.volume) {
+                            throw new Error("Input has to contain payload.volume");
+                        }
+                        msg.payload = await client.setVolume(msg.payload.volume);
+                        break;
                     default:
                         throw new Error("unsupported action: " + msg.payload.action);
                 }

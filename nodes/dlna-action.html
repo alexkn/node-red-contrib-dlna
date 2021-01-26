@@ -56,8 +56,9 @@
         <ul>
             <li><code>msg.device</code> The DLNA Device.</li>
             <li>
-                <code>msg.payload.action</code> can be "play", "pause", "stop" or "load".<br>
+                <code>msg.payload.action</code> can be "play", "pause", "stop", "load", "getvolume", "setvolume".<br>
                 For action "load" <code>msg.payload.url</code> must also be set.
+                For action "setvolume" <code>msg.payload.volume</code> must also be set.
             </li>
         </ul>
     </p>

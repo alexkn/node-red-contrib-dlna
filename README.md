@@ -10,3 +10,5 @@ A node to send commands to a DLNA media renderer:
 - pause
 - stop
 - load an new URL
+- get volume
+- set volume
