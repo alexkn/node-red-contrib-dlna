@@ -12,9 +12,9 @@ module.exports = function(RED) {
                 return;
             }
 
-            let client = new MediaRenderer(device);
-
             try {
+                let client = new MediaRenderer(device);
+
                 switch (msg.payload.action) {
                     case "play":
                         msg.payload = await client.play();
