@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/alexkn/node-red-contrib-dlna/compare/v0.2.0...v0.2.1) (2021-01-31)
+
+
+### Bug Fixes
+
+* load xml lib ([d8c0c98](https://github.com/alexkn/node-red-contrib-dlna/commit/d8c0c98b4a88317af47f7d39afd6e6e5522e966d))
+
 ## [0.2.0](https://github.com/alexkn/node-red-contrib-dlna/compare/v0.1.0...v0.2.0) (2021-01-31)
 
 
