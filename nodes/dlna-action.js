@@ -2,6 +2,8 @@ const MediaRenderer = require("../lib/MediaRenderer");
 const fetch = require("node-fetch").default;
 
 module.exports = function(RED) {
+    MediaRenderer.Scan();
+
     function DlnaAction(config) {
         RED.nodes.createNode(this,config);
 
