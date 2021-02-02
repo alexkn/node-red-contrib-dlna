@@ -10,13 +10,13 @@
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "@types/elementtree": "^0.1.0",
     "@types/mocha": "^8.2.0",
     "@types/node-fetch": "^2.5.8",
     "@types/node-red": "^1.1.1",
     "@types/node-red-node-test-helper": "^0.2.1",
     "@types/node-ssdp": "^3.3.1",
     "@types/should-sinon": "0.0.8",
+    "@types/upnp-mediarenderer-client": "^1.4.0",
     "@types/xml2js": "^0.4.8",
     "eslint": "^7.19.0",
     "mocha": "^8.2.1",

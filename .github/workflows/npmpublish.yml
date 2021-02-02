@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 12
       - run: npm ci
-#      - run: npm run ts-check #TODO disabled due to errors in dependencies
+      - run: npm run ts-check
       - run: npm run lint
       - run: npm test
 
