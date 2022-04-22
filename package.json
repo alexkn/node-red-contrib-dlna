@@ -10,20 +10,20 @@
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "@types/mocha": "^9.1.0",
+    "@types/mocha": "^9.1.1",
     "@types/node-fetch": "^2.6.1",
-    "@types/node-red": "^1.2.0",
+    "@types/node-red": "^1.2.1",
     "@types/node-red-node-test-helper": "^0.2.2",
     "@types/node-ssdp": "^4.0.1",
     "@types/should-sinon": "0.0.8",
     "@types/upnp-mediarenderer-client": "^1.4.0",
-    "@types/xml2js": "^0.4.9",
-    "eslint": "^8.9.0",
+    "@types/xml2js": "^0.4.11",
+    "eslint": "^8.13.0",
     "mocha": "^9.2.1",
     "node-red": "^2.2.2",
     "node-red-node-test-helper": "^0.2.7",
     "standard-version": "^9.3.2",
-    "typescript": "^4.5.5"
+    "typescript": "^4.6.3"
   },
   "scripts": {
     "ts-check": "tsc -p jsconfig.json",
