@@ -67,6 +67,9 @@ module.exports = function(RED) {
     RED.nodes.registerType("dlna-action", DlnaAction);
 
     RED.httpAdmin.get("/dlna/devices", (req, res) => {
-        res.send(MediaRenderer.Renderers());
+        MediaRenderer.Scan();
+        setTimeout(() => {
+            res.send(MediaRenderer.Renderers());
+        }, 1000);
     });
 };
