@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.3](https://github.com/alexkn/node-red-contrib-dlna/compare/v0.2.2...v0.2.3) (2022-06-25)
+
+
+### Bug Fixes
+
+* rescan devices on config ([db72278](https://github.com/alexkn/node-red-contrib-dlna/commit/db722782f5a13b0d21860a56afc204500789bcff))
+
 ### [0.2.2](https://github.com/alexkn/node-red-contrib-dlna/compare/v0.2.1...v0.2.2) (2022-01-24)
 
 ### [0.2.1](https://github.com/alexkn/node-red-contrib-dlna/compare/v0.2.0...v0.2.1) (2021-01-31)
